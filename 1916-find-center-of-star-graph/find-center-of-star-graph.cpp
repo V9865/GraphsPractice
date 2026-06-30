@@ -1,16 +1,14 @@
 class Solution {
 public:
     int findCenter(vector<vector<int>>& edge) {
-        vector<int> Degree((edge.size()+2), 0);
-        for(int i=0; i<edge.size(); i++){
-            Degree[edge[i][0]]++;
-            Degree[edge[i][1]]++;
+        if(edge[0][0]==edge[1][0]){
+            return edge[0][0];
         }
-        for(int i=0; i<edge.size()+2; i++){
-            if(Degree[i]==edge.size()){
-                return i;
-            }
+        else if(edge[0][0]==edge[1][1]){
+            return edge[0][0];
         }
-        return -1;
+        else{
+            return edge[0][1];
+        }
     }
 };
